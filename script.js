@@ -1,4 +1,10 @@
-function showSection(sectionId) {
+ let isLoggedIn = false; 
+
+    function showSection(sectionId) {
+      if (!isLoggedIn && sectionId !== "login") {
+        alert("Please login first!");
+        return;
+      }
   document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
   document.getElementById(sectionId).classList.add('active');
 }
