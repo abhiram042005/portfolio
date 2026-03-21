@@ -1,10 +1,7 @@
- let isLoggedIn = false; 
+
 
     function showSection(sectionId) {
-      if (!isLoggedIn && sectionId !== "login") {
-        alert("Please login first!");
-        return;
-      }
+
   document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
   document.getElementById(sectionId).classList.add('active');
 }
@@ -14,6 +11,7 @@ function login() {
   let pass = document.getElementById("password").value;
   if(user === "admin" && pass === "1234") {
     document.getElementById("loginMessage").innerText = "Login Successful!";
+
   } else {
     document.getElementById("loginMessage").innerText = "Invalid Credentials!";
   }
